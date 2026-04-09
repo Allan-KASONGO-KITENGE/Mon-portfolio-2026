@@ -230,7 +230,116 @@ footer a{
     margin: 0 10px;
     transition: color 0.3s ease, transform 0.2s ease;
 }
+
 footer a:hover{
     color: var(--Orange-vif);
     transform: translateY(-3px);
+}
+
+.Réalisation{
+    width: 800px;
+    margin: 6rem auto ;
+    text-align: center;
+}
+
+.Réalisation h1{
+    color: var(--violet-doux);
+    font-size: 2.6rem;
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+}
+
+.Réalisation h1::after{
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--violet-doux);
+    margin: 1.2rem auto ;
+    border-radius: 2px;
+}
+
+.Carte{
+    display:grid;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: center;
+    padding: 20px;
+    flex: 0 1 300px;
+   grid-template-columns: repeat(3, 1fr);
+}
+
+.Carte p {
+    margin-bottom: 2rem;
+    color: var(--gris-fonce);
+    font-size: 1.3rem;
+    font-family: Roboto, sans-serif; 
+    font-size: 1rem;
+}
+
+article div img{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+.Site_E-Commerce{
+    width: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background: #fff;
+    font-family: sans-serif;
+}
+
+.Gestionnaire_tache{
+    width: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background: #fff;
+    font-family: sans-serif;
+}
+
+.Blog{
+    width: 320px;
+    border-radius: 12px;
+    font-family: sans-serif;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    background: #fff;  
+}
+
+.DashBoard{
+    width: 320px;
+    border-radius: 12px;
+    font-family: sans-serif;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.Meteo{
+    width: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    font-family: sans-serif;
+    background: #fff;
+
+}
+
+.Maquette{
+    width: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    font-family: sans-serif;
+    background: #fff;    
 }
