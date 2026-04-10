@@ -238,8 +238,10 @@ footer a:hover{
 
 .Réalisation{
     width: 800px;
-    margin: 6rem auto ;
+    margin: 6rem auto 0 auto ;
     text-align: center;
+    margin: 6rem auto;
+    margin-bottom: 1rem;
 }
 
 .Réalisation h1{
@@ -256,19 +258,23 @@ footer a:hover{
     width: 60px;
     height: 4px;
     background-color: var(--violet-doux);
-    margin: 1.2rem auto ;
+    margin: 0.5rem auto  0 auto;
     border-radius: 2px;
+    margin-top: 1.2rem auto;
 }
 
 .Carte{
     display:grid;
     flex-direction: row;
     flex-wrap: wrap;
-    gap:20px;
+    gap: 30px;
     justify-content: center;
-    padding: 20px;
+    padding: 20px 40px 40px 40px;
     flex: 0 1 300px;
-   grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+   
 }
 
 .Carte p {
@@ -279,6 +285,31 @@ footer a:hover{
     font-size: 1rem;
 }
 
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px ;
+    background-color: var(--gris-clair);
+    border-top: 1px solid var(--gris-fonce);
+    width: 100%;
+    margin-top: auto;
+    
+}
+
+.card-footer a{
+    text-decoration: none;
+    color: var(--gris-tres-fonce);
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s;
+}
+
+.card-footer a:hover{
+    color: var(--violet-doux);
+}
 article div img{
     width: 100%;
     height: 200px;
@@ -286,60 +317,561 @@ article div img{
     background-color: #f0f0f0;
     object-fit: cover;
     object-position: center;
-
-}
-
-.Site_E-Commerce{
-    width: 320px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    background: #fff;
-    font-family: sans-serif;
+    border-bottom: 3px solid var(--violet-doux);
 }
 
 .Gestionnaire_tache{
-    width: 320px;
+    width: 100%;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    background: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    background: var(--gris-tres-clair);
     font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s ease;
+    padding: 0;
 }
 
-.Blog{
-    width: 320px;
-    border-radius: 12px;
-    font-family: sans-serif;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    overflow: hidden;
-    background: #fff;  
+.Gestionnaire_tache > div:nth-child(2){
+    flex-grow: 1;
+    padding: 20px;
+    
 }
 
-.DashBoard{
-    width: 320px;
-    border-radius: 12px;
-    font-family: sans-serif;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+.Gestionnaire_tache div h3{
+    color: var(--violet-doux);
+    font-size: 1.3rem;
+    align-items: center;
+    padding: 15px;
+    padding-block-end: 1px;
+    margin-bottom: 10px;
 }
 
-.Meteo{
-    width: 320px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    font-family: sans-serif;
-    background: #fff;
+.Gestionnaire_tache div p{
+    padding: 5px;
+    font-size: 0.95rem;
+    color: var(--gris-fonce);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.Gestionnaire_tache ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    margin-top: 15px;  
+    list-style: none; 
+}
+
+.Gestionnaire_tache div ul span{
+    display: inline-block;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+    background-color: var(--gris-clair);
+    color: var(--violet-doux);
+    align-items: center;
+    padding: 5px 12px ;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 1px solid var(--border-color);
+    margin: 0;
+    list-style: none;
 
 }
 
-.Maquette{
-    width: 320px;
-    border-radius: 12px;
+.Gestionnaire_tache:hover{
+    transform: translateY(-5px);
+}
+
+.Gestionnaire_tache img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--violet-doux);
+}
+.contact-page-body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Fond gris très clair cohérent */
+    background-color: var(--gris-tres-clair);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--gris-tres-fonce);
+}
+
+/* Centre le contenu principal */
+.contact-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* La carte de contact principale */
+.contact-card {
+    background-color: white;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Ombre très douce */
+    display: flex;
     overflow: hidden;
+}
+
+/* --- Section de Gauche (Formulaire) --- */
+.form-section {
+    flex: 1.2; /* Un peu plus large pour le formulaire */
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section h2 {
+    font-size: 28px;
+    color: var(--violet-doux); /* Titre en violet doux */
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: 500;
+    color: var(--gris-tres-fonce);
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.form-section input,
+.form-section textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gris-clair); /* Bordure en gris clair */
+    border-radius: 5px;
+    font-size: 16px;
+    color: var(--gris-tres-fonce);
+    background-color: white;
+    transition: var(--transition-normal);
+}
+
+/* Empêche le redimensionnement manuel du textarea */
+.form-section textarea {
+    resize: none;
+}
+
+/* Placeholder style */
+.form-section input::placeholder,
+.form-section textarea::placeholder {
+    color: var(--gris-fonce); /* Placeholder en gris foncé */
+}
+
+/* Effet au focus cohérent */
+.form-section input:focus,
+.form-section textarea:focus {
+    outline: none;
+    border-color: var(--violet-fonce); /* Bordure violet foncé au focus */
+    box-shadow: 0 0 0 3px rgba(83, 78, 221, 0.1); /* Halo violet très clair */
+}
+
+/* Le bouton Send cohérent */
+.send-btn {
+    background-color: var(--violet-doux); /* Bouton violet doux par défaut */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: 20px;
+    transition: var(--transition-fast);
+}
+
+.send-btn:hover {
+    background-color: var(--violet-fonce); /* Violet foncé au survol */
+    transform: translateY(-2px);
+}
+
+/* --- Section de Droite (Informations) --- */
+.info-section {
+    flex: 1;
+    /* Fond de la section d'info cohérent (violet doux) */
+    background-color: var(--violet-doux);
+    padding: 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrer verticalement */
+    align-items: center; /* Centrer horizontalement */
+    gap: 25px;
+    text-align: center; /* Aligner le texte au centre */
+}
+
+.info-section h3 {
+    font-size: 20px;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center; /* Centrer les éléments à l'intérieur de info-item */
+    width: 100%; /* S'assurer que info-item prend toute la largeur pour le centrage */
+}
+
+.info-item i {
+    font-size: 18px;
+    width: 20px; /* Largeur fixe pour alignement */
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8); /* Icônes légèrement transparentes */
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: white;
+}
+
+/* Zone des icônes sociales */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center; /* Centrer les icônes sociales */
+    width: 100%;
+}
+
+/* Style des cercles d'icônes cohérent (bordure) */
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Bordure blanche transparente */
+    border-radius: 50%; /* Cercle */
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.social-icon i {
+    font-size: 18px;
+}
+
+/* Effet au survol des icônes */
+.social-icon:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.1); /* Fond très léger au survol */
+    border-color: white;
+}
+
+/* Couleurs spécifiques cohérentes au survol pour WhatsApp/Telegram
+   Note : J'ai gardé les couleurs officielles pour la reconnaissance,
+   mais vous pouvez les changer si vous préférez une cohérence absolue. */
+.social-icon.whatsapp:hover {
+    background-color: #25D366; /* Vert WhatsApp */
+    border-color: #25D366;
+}
+
+.social-icon.telegram:hover {
+    background-color: #0088cc; /* Bleu Telegram */
+    border-color: #0088cc;
+}
+
+/* --- Responsive (pour mobiles) --- */
+@media (max-width: 768px) {
+    .contact-card {
+        flex-direction: column; /* Empile les sections verticalement */
+        border-radius: 10px;
+    }
+
+    .form-section, .info-section {
+        padding: 30px;
+    }
+
+    .info-section {
+        flex-direction: column; /* Revenir en colonne sur mobile */
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* La page Divertissemnt */
+/* --- GRILLE BENTO DIVERTISSEMENT --- */
+.bento-grid {
+    display: grid;
+    /* Création de 4 colonnes égales */
+    grid-template-columns: repeat(4, 1fr);
+    /* Définition de 2 rangées de 300px */
+    grid-template-rows: repeat(2, 300px);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Style de base des cartes */
+.bento-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--violet-doux);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bento-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(108, 99, 255, 0.25);
+}
+
+/* Gestion des images de fond */
+.bento-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.6; /* Assombrit pour la lisibilité */
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.bento-item:hover img {
+    opacity: 0.4;
+    transform: scale(1.1); /* Petit zoom au survol */
+}
+
+/* Overlay pour le texte */
+.bento-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    color: white;
+    z-index: 2;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.bento-overlay h3 {
+    font-size: 1.6rem;
+    margin: 10px 0;
+    color: white;
+}
+
+.card-badge {
+    display: inline-block;
+    background-color: var(--violet-doux);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- LIENS MUSIQUE (Spotify / Boomplay) --- */
+.music-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.music-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.music-links a:hover {
+    background: var(--violet-doux);
+    border-color: var(--violet-doux);
+    transform: translateY(-2px);
+}
+
+/* --- CONFIGURATION DES TAILLES (COEUR DU BENTO) --- */
+
+/* Musique : prend 2 colonnes et 2 rangées (le grand bloc) */
+.music-card {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Jeux Vidéo : prend 2 colonnes à droite de la musique */
+.games-card {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+/* Animés & Sports : occupent chacun 1 colonne sous les jeux vidéo */
+.anime-card, .sports-card {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/* Supercars : se place tout en bas ou prend une large zone */
+/* Note: Selon le flux, il se placera automatiquement après */
+.car-card {
+    grid-column: span 4; /* On peut le mettre en large sur toute la ligne pour finir */
+    height: 250px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        grid-template-rows: auto;
+    }
+    
+    .bento-item {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        height: 350px;
+    }
+}
+/* --- PAGE PASSIONS : ISOLATION --- */
+
+.psn-section-container {
+    padding-bottom: 50px;
+}
+
+.psn-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.psn-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--violet-doux);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    font-family: sans-serif;
-    background: #fff;    
+    transition: all 0.4s ease;
+}
+
+.psn-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(108, 99, 255, 0.3);
+}
+
+.psn-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+    transition: transform 0.6s ease, opacity 0.4s ease;
+}
+
+.psn-card:hover .psn-card-img {
+    transform: scale(1.1);
+    opacity: 0.5;
+}
+
+.psn-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    color: white;
+    z-index: 2;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.psn-badge {
+    display: inline-block;
+    background-color: var(--Orange-vif);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.psn-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.psn-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+/* --- LOGIQUE BENTO (TAILLES) --- */
+
+.psn-card-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.psn-card-wide {
+    grid-column: span 2;
+}
+
+.psn-card-standard {
+    grid-column: span 1;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 850px) {
+    .psn-bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    
+    .psn-card, .psn-card-large, .psn-card-wide {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        height: 350px;
+    }
 }
